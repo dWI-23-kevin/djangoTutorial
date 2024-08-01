@@ -28,12 +28,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path("polls/", include("polls.urls")),
+    path('api/', include('polls.urls_api')),
 ]
-
-# if settings.DEBUG:
-#     import debug_toolbar
-#
-#     urlpatterns += [path('__debug__/', include(debug_toolbar.urls))]
 
 if settings.DEBUG:
     import debug_toolbar
