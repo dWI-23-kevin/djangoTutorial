@@ -18,6 +18,9 @@ from django.conf import settings
 from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path, include
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='API DOC')
 
 
 def home(request):
@@ -29,6 +32,7 @@ urlpatterns = [
     path('', home, name='home'),
     path("polls/", include("polls.urls")),
     path('api/', include('polls.urls_api')),
+    path('swagger/', schema_view),
 ]
 
 if settings.DEBUG:
