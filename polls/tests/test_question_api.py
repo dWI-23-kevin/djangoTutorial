@@ -1,11 +1,10 @@
-# polls/tests/test_question_api.py
-
 import pytest
 from django.urls import reverse
 from django.utils import timezone
-from polls.tests.factories import QuestionFactory
 from rest_framework import status
 from rest_framework.test import APIClient
+
+from polls.tests.factories import QuestionFactory
 
 
 @pytest.mark.django_db
